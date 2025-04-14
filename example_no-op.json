@@ -1,0 +1,12 @@
+{
+    "resource_changes": [
+        {
+            "address": "resource.1",
+            "change": {
+                "actions": [
+                    "no-op"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "resource_changes": [
+        {
+            "address": "resource.1",
+            "change": {
+                "actions": [
+                    "create"
+                ]
+            }
+        },
+        {
+            "address": "resource.2",
+            "change": {
+                "actions": [
+                    "delete"
+                ]
+            }
+        },
+        {
+            "address": "resource.3",
+            "change": {
+                "actions": [
+                    "update"
+                ]
+            }
+        },
+        {
+            "address": "resource.4",
+            "change": {
+                "actions": [
+                    "create"
+                ]
+            }
+        },
+        {
+            "address": "resource.5",
+            "change": {
+                "actions": [
+                    "no-op"
+                ]
+            }
+        },
+        {
+            "address": "resource.6",
+            "change": {
+                "actions": [
+                    "create",
+                    "delete"
+                ]
+            }
+        },
+        {
+            "address": "resource.7",
+            "change": {
+                "actions": [
+                    "delete",
+                    "create"
+                ]
+            }
+        }
+    ]
+}
