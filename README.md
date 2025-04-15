@@ -3,17 +3,26 @@
 `tfplan-summary` is a Python command-line utility that parses and prints a summary of the Terraform plan output.
 
 ## Examples
-`python main.py -p examples/tfplan.json -c`
 
-![tfplan_json](./assets/images/tfplan_json_color.png)
+Here are some usage examples. Click the triangles to view the output images.
 
-`python main.py -p examples/no-op.json -c -r`
+<details>
+  <summary>View output for <code>python main.py -p examples/json/tfplan.json -c</code></summary>
 
-![tfplan_json](./assets/images/no-op_json_color-r.png)
+  ![Example output for tfplan.json](./assets/images/tfplan_json_color.png)
+</details>
 
-`python main.py -p examples/no-op.json -c -s`
+<details>
+  <summary>View output for <code>python main.py -p examples/json/no-op.json -c -r</code></summary>
 
-![tfplan_json](./assets/images/no-op_json_color-s.png)
+  ![Example output for no-op.json with -c -r flags](./assets/images/no-op_json_color-r.png)
+</details>
+
+<details>
+  <summary>View output for <code>python main.py -p examples/json/no-op.json -c -s</code></summary>
+
+  ![Example output for no-op.json with -c -s flags](./assets/images/no-op_json_color-s.png)
+</details>
 
 ## Installation
 ```bash
