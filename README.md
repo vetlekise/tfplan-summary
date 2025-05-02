@@ -48,6 +48,16 @@ python main.py -p tfplan.json -r -c
 
 > Note: You can find a couple of JSON example files in the `./examples/json` folder.
 
+### Add to PATH
+Make the script executable and add it to your PATH for global access:
+```bash
+# Make the script executable
+chmod +x main.py
+
+# Create a symbolic link to the script in a directory in your PATH
+ln -s $(pwd)/main.py /usr/local/bin/tfplan-summary
+```
+
 #### Outputs
 
 Click the triangles to view the output images.
