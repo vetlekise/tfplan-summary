@@ -1,0 +1,66 @@
+name: Enhancement
+description: Suggest an idea, enhancement, or new feature.
+title: "[Enhancement]: "
+labels: ["enhancement"]
+body:
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Describe the Enhancement
+      description: "What is the new feature or improvement you are proposing? What is the goal?"
+      placeholder: |
+        e.g., Add a new method `to_csv()` to the `ReportGenerator` class.
+        Goal: Allow users to easily export generated reports to a CSV file, in addition to the existing JSON format.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / Problem Solved
+      description: "Why is this feature needed? What problem does it solve, or what benefit does it provide?"
+      placeholder: |
+        e.g., Currently, our downstream data analysis tools consume CSV files more easily than JSON.
+        This enhancement would streamline the data pipeline by removing the need for a separate JSON-to-CSV conversion script.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution (Optional)
+      description: "Do you have any ideas on how this feature could be implemented? Think about new functions, arguments, classes, or changes to existing logic."
+      placeholder: |
+        e.g.,
+        - Add a new public method `to_csv(self, file_path: str)` to the `ReportGenerator` class.
+        - The method could use Python's built-in `csv` module to handle the conversion.
+        - Add a corresponding `--format csv` option to the command-line interface.
+        - Include a new unit test in `tests/test_generator.py` to verify the CSV output.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered (Optional)
+      description: "Are there any alternative solutions or features you've considered? Why is your proposed solution better?"
+      placeholder: |
+        e.g.,
+        - Users could write their own script to convert the JSON output. However, building this functionality directly into the project makes it more robust and user-friendly.
+        - A separate utility function could be created outside the class, but integrating it as a method feels like a cleaner API.
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact (Optional)
+      description: "What is the potential impact of this enhancement? Consider aspects like breaking changes, new dependencies, or changes to return values."
+      placeholder: |
+        e.g.,
+        - This should be a non-breaking change since it only adds a new method.
+        - No new external package dependencies are required if we use the built-in `csv` module.
+        - Existing function signatures and return values will not be affected.
+    validations:
+      required: false

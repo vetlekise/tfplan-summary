@@ -1,0 +1,48 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+
+exclude-labels:
+  - 'internal'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+template: |
+  ## Changelog
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+autolabeler:
+  - label: 'documentation'
+    files:
+      - '*.md'
+      - 'docs/*'
+    branch:
+      - '/docs{0,1}\/.+/'
+    title:
+      - '/(docs)/i'
+  - label: 'bug'
+    branch:
+      - '/bug\/.+/'
+      - '/fix\/.+/'
+    title:
+      - '/(bug|fix)/i'
+  - label: 'enhancement'
+    branch:
+      - '/enhancement\/.+/'
+      - '/feature\/.+/'
+    title:
+      - '/(enhancement|feature|feat)/i'
+  - label: 'chore'
+    files:
+      - '.github/workflows/*'

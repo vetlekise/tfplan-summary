@@ -1,0 +1,80 @@
+# The build-system section is mandatory and tells tools like pip how to build your project.
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+# The project section contains the core metadata for your package.
+# This information is used by packaging tools and displayed on PyPI.
+[project]
+name = "tfplan-summary"
+version = "0.1.0"
+authors = [
+  { name="Vetle Kise" },
+]
+description = "A Python command-line utility that parses and prints a summary of the Terraform plan output."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file="LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU License",
+    "Operating System :: OS Independent",
+]
+
+# Project dependencies are listed here. These are required for your code to run.
+dependencies = [
+    "rich>=14.0.0"
+]
+
+# Optional dependencies are for development, testing, etc.
+# Install them with: pip install .[dev]
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest",
+    "mypy",
+    "pre-commit",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-callouts"
+]
+
+[project.scripts]
+tfplan = "tfplan_summary.main:run"
+
+# This section configures the build tool, setuptools.
+[tool.setuptools]
+# This line is crucial for finding your package inside the src/ directory.
+package-dir = {"" = "src"}
+
+# This section configures the Ruff linter and formatter.
+[tool.ruff]
+# Set the maximum line length. 88 is the default for Black.
+line-length = 115
+# Specify which Python version your code targets.
+target-version = "py310"
+
+[tool.ruff.lint]
+# Select the rule sets you want to enable.
+# E/F: Standard pyflakes/pycodestyle errors
+# I: isort for import sorting
+# UP: pyupgrade for modernizing code
+select = ["E", "F", "I", "UP"]
+
+# This section configures the Mypy type checker.
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+# This section configures pytest.
+[tool.pytest.ini_options]
+minversion = "8.0"
+# Add command-line options here. -ra shows extra summary info for all but passed tests.
+addopts = "-ra -q"
+# Tell pytest where to find the tests.
+testpaths = [
+    "tests",
+]
