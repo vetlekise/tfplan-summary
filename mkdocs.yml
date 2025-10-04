@@ -17,7 +17,7 @@ nav:
     - Overview: index.md
     - Code of Conduct: CODE_OF_CONDUCT.md
     - Security: SECURITY.md
-    - License: license/index.md
+    - License: license_ref/index.md
   - Usage:
     - usage/index.md
   - Development:
