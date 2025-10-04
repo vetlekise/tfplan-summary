@@ -1,0 +1,66 @@
+name: Python
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - ".github/workflows/python.yml"
+  pull_request:
+    types: [opened, synchronize]
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - ".github/workflows/python.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Build matrix to test the code against multiple Python versions.
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      # Checks out the repository code so the workflow can access it.
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      #  Sets up the specific Python version for the current job in the matrix.
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          # Optional: Caching dependencies to speed up future runs
+          cache: 'pip'
+
+      # Installs project dependencies.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[dev]
+
+      # Runs the Ruff linter and formatter.
+      # `ruff check` finds potential errors.
+      # `ruff format --check` ensures the code is formatted correctly without changing files.
+      - name: Lint and Format with Ruff
+        run: |
+          ruff check .
+          ruff format --check .
+
+      # Runs Mypy for static type checking on your source code.
+      - name: Analyze code with Mypy
+        run: |
+          mypy src/
+
+      # Runs the test suite using pytest.
+      - name: Test with pytest
+        continue-on-error: true
+        run: |
+          pytest

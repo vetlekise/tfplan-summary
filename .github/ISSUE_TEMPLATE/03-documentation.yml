@@ -1,0 +1,70 @@
+name: Documentation
+description: Report an error, suggest an improvement, or request new documentation.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+
+  - type: input
+    id: doc-location
+    attributes:
+      label: Location of Documentation
+      description: "Which document, section, docstring, or example needs attention?"
+      placeholder: "e.g., README.md - Installation section, docstring for 'utils.helpers.calculate_total()', docs/quickstart.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Type of Documentation Issue
+      description: "What kind of documentation issue is this?"
+      options:
+        - Typo or grammatical error
+        - Incorrect information
+        - Missing information
+        - Unclear or confusing content
+        - Request for new documentation section/page
+        - Suggestion for improvement
+        - Broken link or formatting issue
+        - Example code issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Documentation Issue/Request
+      description: "Please provide a clear and concise description of the problem or suggestion. If reporting an error, what is incorrect or unclear?"
+      placeholder: |
+        e.g.,
+        - The docstring for the 'timeout' parameter in 'api.client.make_request()' is missing.
+        - The example code in 'examples/basic_usage.py' fails with an ImportError.
+        - The "Return Value" section in the 'process_data' function's docstring is confusing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / Reason
+      description: "Why does this documentation need changing or what is the benefit of the new documentation? What problem does the current state cause for users?"
+      placeholder: |
+        e.g.,
+        - New users might not know what unit of time (seconds, milliseconds) the 'timeout' parameter expects.
+        - The broken example prevents users from quickly learning how to use the library's core features.
+        - Clearer return value descriptions would help users correctly handle the function's output in their own code.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed Change / Suggestion (Optional)
+      description: "How do you suggest fixing or improving the documentation? If you have a specific wording or code change, please include it."
+      placeholder: |
+        e.g.,
+        - Suggest adding the following to the docstring: ":param timeout: The request timeout in seconds (float)."
+        - "The example code needs to include 'from my_package import Client' at the top of the file."
+        - "Rewrite the 'Returns' section to specify the exact dictionary keys and their expected data types."
+    validations:
+      required: false

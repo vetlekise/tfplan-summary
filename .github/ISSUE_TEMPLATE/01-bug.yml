@@ -1,0 +1,91 @@
+name: Bug Report
+description: Report a problem or unexpected behavior in the code.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+
+  - type: dropdown
+    id: affected-component
+    attributes:
+      label: Affected Component
+      description: "Which part of the project is experiencing the issue?"
+      multiple: true
+      options:
+        - A specific module/file
+        - A specific class/function
+        - Dependencies (e.g., requirements.txt, pyproject.toml)
+        - Setup/Installation
+        - Tests
+        - Documentation (docstrings, README)
+        - CI/CD Workflow
+        - Other (please specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Describe the Bug
+      description: "A clear and concise description of what the bug is. What did you expect to happen, and what actually happened? Please include the full error message."
+      placeholder: |
+        e.g., Expected the function 'calculate_total()' to return 15 when given [5, 10], but it returned 0.
+        Error message: `TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'`
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: "How can we reproduce this behavior? Please provide a minimal set of steps."
+      placeholder: |
+        1. Clone the repository.
+        2. Create and activate a virtual environment.
+        3. Install the project and its development dependencies: `pip install .[dev]`
+        4. Run the script: `python src/my_project/main.py --some-argument 'value'`
+        5. Observe the error/traceback in the console...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code-snippet
+    attributes:
+      label: Minimal Reproducible Example
+      description: "Paste a small, self-contained code snippet that reproduces the bug. Please **remove any sensitive information**."
+      placeholder: |
+        ```python
+        from my_project.utils import calculate_total
+
+        def test_calculation():
+            # This is the code that fails
+            result = calculate_total([5, None, 10])
+            print(result)
+
+        test_calculation()
+        ```
+      render: python
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: Environment Details
+      description: "Provide details about the environment where the issue occurred."
+      placeholder: |
+        - Python Version: `python --version`
+        - Package Versions: (output of `pip list` or relevant sections from `pyproject.toml`)
+        - Operating System: (e.g., Ubuntu 22.04, macOS Sonoma, Windows 11)
+        - Virtual Environment Tool: (e.g., venv, conda, poetry)
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Traceback / Log Output (Optional)
+      description: "Copy and paste the full traceback or any relevant log output. This will be automatically formatted. Please **remove any sensitive information**."
+      render: shell
+    validations:
+      required: false

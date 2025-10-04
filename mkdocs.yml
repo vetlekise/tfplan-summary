@@ -1,0 +1,91 @@
+site_name: 'tfplan-summary'
+site_description: "A Python command-line utility that parses and prints a summary of the Terraform plan output."
+site_url: "https://domain.tld"
+repo_url: https://github.com/vetlekise/tfplan-summary
+repo_name: 'vetlekise/tfplan-summary'
+copyright: '2025, Vetle Kise'
+watch: [src/tfplan_summary, mkdocs.yml, README.md, docs/CONTRIBUTING.md, docs/SECURITY.md, docs/CODE_OF_CONDUCT.md]
+edit_uri: edit/main/docs/
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+  - Home:
+    - Overview: index.md
+    - Code of Conduct: CODE_OF_CONDUCT.md
+    - Security: SECURITY.md
+    - License: license/index.md
+  - Usage:
+    - usage/index.md
+  - Development:
+    - Contributing: CONTRIBUTING.md
+  - API Reference:
+    - api-reference/index.md
+  - Tests:
+    - tests/index.md
+
+theme:
+  name: material
+  #logo: logo.svg
+  features:
+  - announce.dismiss
+  - content.action.edit
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - content.tooltips
+  - navigation.instant.preview
+  - navigation.path
+  - navigation.sections
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.top
+  - search.highlight
+  - search.suggest
+  - toc.follow
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: black
+    accent: blue
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: blue
+    toggle:
+      icon: material/weather-night
+      name: Switch to system preference
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+
+plugins:
+  - search
+  - callouts
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src, tests]
+          options:
+            show_root_heading: true
+            show_source: true
+            show_symbol_type_toc: true
+            show_symbol_type_heading: true
+            show_submodules: true
