@@ -57,7 +57,7 @@ ruff check
 ```
 
 ### Documentation
-Read the `README.md` in [docs](README.md) for more information on how to setup and view the documentation.
+Read the `README.md` in [docs](documentation/index.md) for more information on how to setup and view the documentation.
 
 ## Issues
 Before starting work, search existing issues. If your contribution isn't covered, open a new issue. Describe the bug (with steps to reproduce) or proposed feature/enhancement.

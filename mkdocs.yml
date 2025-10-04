@@ -26,6 +26,8 @@ nav:
     - api-reference/index.md
   - Tests:
     - tests/index.md
+  - Documentation:
+    - documentation/index.md
 
 theme:
   name: material

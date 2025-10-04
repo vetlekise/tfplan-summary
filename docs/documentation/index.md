@@ -1,3 +1,9 @@
+---
+title: Documentation
+hide:
+- navigation
+---
+
 # Documentation
 
 This document provides an overview of how documentation is structured, written, and deployed for this project.
