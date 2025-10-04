@@ -46,16 +46,6 @@ Usage examples:
 - **Manually run on all files**: `pre-commit run --all-files`
 - **Skip hooks**: `git commit --no-verify -m "Your commit message"`
 
-## Lint and Check Code with Ruff
-```bash
-ruff check
-```
-
-## Check Types with MyPy
-```bash
-
-```
-
 ### Documentation
 Read the `README.md` in [docs](documentation/index.md) for more information on how to setup and view the documentation.
 

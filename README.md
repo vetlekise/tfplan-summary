@@ -18,7 +18,7 @@ cd tfplan-summary
 
 Install the package:
 ```bash
-pip install .
+pip3 install .
 ```
 
 ## Quick Usage
