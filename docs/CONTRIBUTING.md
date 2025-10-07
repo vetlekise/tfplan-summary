@@ -20,7 +20,7 @@ It's highly recommended to work in a virtual environment.
 
 ```bash
 python3 -m venv .venv
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 ### Select Python Interpreter
