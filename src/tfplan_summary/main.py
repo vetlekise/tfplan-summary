@@ -10,7 +10,7 @@ from rich.table import Table
 
 # https://rich.readthedocs.io/en/stable/appendix/colors.html
 COLOR_MAP = {
-    "create": "chartreuse3",
+    "create": "green3",
     "delete": "red1",
     "update": "yellow",
     "replace": "dark_orange",
