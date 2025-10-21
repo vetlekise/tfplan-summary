@@ -2,12 +2,7 @@
 
 A Python command-line utility that parses and prints a summary of the Terraform plan output.
 
-## Features
-- **Modern Packaging**: Uses `pyproject.toml` and a `src` layout.
-- **High Code Quality**: Enforced with [Ruff](https://github.com/astral-sh/ruff), [Mypy](https://github.com/python/mypy) and [Pre-commit](https://github.com/pre-commit/pre-commit) hooks.
-- **Automated Testing**: CI pipeline powered by [Pytest](https://github.com/pytest-dev/pytest) and GitHub Actions.
-- **Automated Documentation**: Generates a documentation website with [MkDocs](https://github.com/mkdocs/mkdocs).
-- **Automated Releases**: Draft releases gets created with [Release Drafter](https://github.com/release-drafter/release-drafter).
+<img src="docs/img/terminalizer.gif" alt="terminal demo" width="650" />
 
 ## Installation
 Clone the repository:
@@ -16,7 +11,14 @@ git clone https://github.com/vetlekise/tfplan-summary.git
 cd tfplan-summary
 ```
 
-Install the package:
+Create and activate a Python virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+# windows: .venv\Scripts\activate
+```
+
+Install the package with pip:
 ```bash
 pip3 install .
 ```
@@ -27,4 +29,4 @@ Use an example Terraform plan output in the `/examples/json` directory to test t
 tfplan -p examples/json/tfplan.json
 ```
 
-For more usage examples, see the [usage](usage/index.md) page.
+For more usage examples, see the [usage](docs/usage/index.md) page.
