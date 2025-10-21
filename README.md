@@ -2,7 +2,7 @@
 
 A Python command-line utility that parses and prints a summary of the Terraform plan output.
 
-<img src="docs/img/terminalizer.gif" alt="terminal demo" width="500" />
+<img src="docs/img/terminalizer.gif" alt="terminal demo" width="650" />
 
 ## Installation
 Clone the repository:
